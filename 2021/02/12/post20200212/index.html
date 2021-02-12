@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#33474d">
-	<title>Tags | Hexo</title>
+	<title>关于计算机管理下的service无法启动解决方案 | Hexo</title>
 	<link rel="stylesheet" href="/css/style.css" />
 	
       <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -29,53 +29,37 @@
 	</header>
 
 	<main>
-		<h1>Tags</h1>
-
-<ul class="archive">
+		<article>
 	
+		<h1>关于计算机管理下的service无法启动解决方案</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2021-02-12</span><br />
 		
-		<li class="archive__year archive__expendable">
-			<span>以防万一</span>
-			<ul>
-			
-				
-			
-				
-			
-				
-			
-				
-			
-				
-					
-					
-						<li class="archive__entry"><a href="/2021/02/12/post20200212/">关于计算机管理下的service无法启动解决方案</a></li>
-					
+			<span class="article__category">
+				<a class="article-category-link" href="/categories/%E7%BB%8F%E9%AA%8C/">经验</a>
+			</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/%E4%BB%A5%E9%98%B2%E4%B8%87%E4%B8%80/" rel="tag">以防万一</a>
+			</span>
+		
+	</div>
 
-				
-			
-				
-					
-					
-						<li class="archive__entry"><a href="/2021/02/12/post20200212_2/">关于HEXO文章tag的使用问题</a></li>
-					
-
-				
-			
-			</ul>
-		</li>
 	
-</ul>
 
-<script>
-	const expandables = document.querySelectorAll('.archive__expendable')
-	for(let i = 0; i < expandables.length; i++) {
-		expandables[i].addEventListener('click', (e) => {
-			e.stopPropagation()
-			expandables[i].classList.toggle('archive__expendable_collapsed')
-		})
-	}
-</script>
+	
+		<p>1.按Windows + R 弹出运行框，输入regedit 进入注册表<br>2.在左侧找到一下路径，或者复制路径到注册表上方的路径位置，按回车<br>中文版Windows :计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services英文版Windows:Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br>3.找到对应服务的名称，进入<br>4.在右侧找到名为start 的，类型为REG_Dword 项目，双击修改数值，按照你个人的意愿，2为自动，3为手动，4为禁用。<br>5.重启电脑。解决问题</p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2021/02/12/post20200212/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
 
 	</main>
 

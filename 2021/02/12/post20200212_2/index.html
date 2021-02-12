@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#33474d">
-	<title>Tags | Hexo</title>
+	<title>关于HEXO文章tag的使用问题 | Hexo</title>
 	<link rel="stylesheet" href="/css/style.css" />
 	
       <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -29,53 +29,37 @@
 	</header>
 
 	<main>
-		<h1>Tags</h1>
-
-<ul class="archive">
+		<article>
 	
+		<h1>关于HEXO文章tag的使用问题</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2021-02-12</span><br />
 		
-		<li class="archive__year archive__expendable">
-			<span>以防万一</span>
-			<ul>
-			
-				
-			
-				
-			
-				
-			
-				
-			
-				
-					
-					
-						<li class="archive__entry"><a href="/2021/02/12/post20200212/">关于计算机管理下的service无法启动解决方案</a></li>
-					
+			<span class="article__category">
+				<a class="article-category-link" href="/categories/%E7%BB%8F%E9%AA%8C/">经验</a>
+			</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/%E4%BB%A5%E9%98%B2%E4%B8%87%E4%B8%80/" rel="tag">以防万一</a>
+			</span>
+		
+	</div>
 
-				
-			
-				
-					
-					
-						<li class="archive__entry"><a href="/2021/02/12/post20200212_2/">关于HEXO文章tag的使用问题</a></li>
-					
-
-				
-			
-			</ul>
-		</li>
 	
-</ul>
 
-<script>
-	const expandables = document.querySelectorAll('.archive__expendable')
-	for(let i = 0; i < expandables.length; i++) {
-		expandables[i].addEventListener('click', (e) => {
-			e.stopPropagation()
-			expandables[i].classList.toggle('archive__expendable_collapsed')
-		})
-	}
-</script>
+	
+		<p>Front-matter应该用tag： 而不能用tags：</p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2021/02/12/post20200212_2/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
 
 	</main>
 
