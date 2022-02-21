@@ -37,6 +37,38 @@
 
 	<article>
 	
+		<h1><a href="/2021/02/12/post20200212/">关于计算机管理下的service无法启动解决方案</a></h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2021-02-12</span><br />
+		
+			<span class="article__category">
+				<a class="article-category-link" href="/categories/%E7%BB%8F%E9%AA%8C/">经验</a>
+			</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/%E4%BB%A5%E9%98%B2%E4%B8%87%E4%B8%80/" rel="tag">以防万一</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>1.按Windows + R 弹出运行框，输入regedit 进入注册表<br>2.在左侧找到一下路径，或者复制路径到注册表上方的路径位置，按回车<br>中文版Windows :计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services英文版Windows:Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br>3.找到对应服务的名称，进入<br>4.在右侧找到名为start 的，类型为REG_Dword 项目，双击修改数值，按照你个人的意愿，2为自动，3为手动，4为禁用。<br>5.重启电脑。解决问题</p>
+
+	
+
+	
+
+</article>
+
+
+
+
+	<article>
+	
 		<h1><a href="/2021/02/08/22/">身处数字化时代，我们衣不蔽体</a></h1>
 	
 	<div class="article__infos">
@@ -178,7 +210,7 @@
 	    
 
 		<div class="footer-credit">
-			<span>© 2021 John Doe | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+			<span>© 2022 John Doe | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
 		</div>
 
 	</div>
