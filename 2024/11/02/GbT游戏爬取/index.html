@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>GBT游戏爬取 | Hexo</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">Hexo</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>GBT游戏爬取</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2024-11-02</span><br />
+		
+			<span class="article__category">
+				<a class="article-category-link" href="/categories/spider/">spider</a>
+			</span><br />
+		
+		
+	</div>
+
+	
+
+	
+		<p>本次采用selenium方式爬取<br>但此代码有个小小问题 在第二个日期分类下会出现多个空格<br>selenium中的隐性等待和显示等待都测试过，无法解决这个问题<br>故把保存的txt逐行读取，再删除空格了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">file1 = <span class="built_in">open</span>(<span class="string">&#x27;file1.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)   <span class="comment"># 打开要去掉空行的文件</span></span><br><span class="line">file2 = <span class="built_in">open</span>(<span class="string">&#x27;data2.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)  <span class="comment"># 生成没有空行的文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> file1.readlines():</span><br><span class="line">    <span class="keyword">if</span> line == <span class="string">&#x27;\n&#x27;</span>:</span><br><span class="line">        line = line.strip(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    file2.write(line)</span><br><span class="line"></span><br><span class="line">file1.close()</span><br><span class="line">file2.close()</span><br></pre></td></tr></table></figure>
+<p>python代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding =utf-8 -*-</span></span><br><span class="line"><span class="comment"># @time : 2022/8/3 11:29</span></span><br><span class="line"><span class="comment"># @software: PyCharm</span></span><br><span class="line"><span class="comment"># Author:Xiao_yu</span></span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    sdata()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sdata</span>():</span></span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;data.txt&#x27;</span>,<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">    driver = webdriver.Chrome()</span><br><span class="line">    driver.get(<span class="string">&quot;http://gbtgame.ysepan.com/&quot;</span>)</span><br><span class="line">    sleep(<span class="number">2</span>)</span><br><span class="line">    elist = driver.find_elements_by_class_name(<span class="string">&#x27;ml&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(elist)):</span><br><span class="line">        elist[i].click()</span><br><span class="line">        sleep(<span class="number">2</span>)</span><br><span class="line">        f.write(elist[i].text)</span><br><span class="line">        f.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        f.write((<span class="string">&#x27;\n&#x27;</span>))</span><br><span class="line">        egame =driver.find_elements_by_class_name(<span class="string">&#x27;xwj&#x27;</span>)</span><br><span class="line">        sleep(<span class="number">3</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(egame)):</span><br><span class="line">            f.write(egame[j].text)</span><br><span class="line">            f.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    driver.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+	
+
+	
+		<span class="different-posts"><a href="/2024/11/02/GbT%E6%B8%B8%E6%88%8F%E7%88%AC%E5%8F%96/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2024 John Doe | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+<script src="/live2d/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"display":{"position":"left"},"mobile":{"show":false},"model":{"scale":1.2,"jsonPath":"/live2d/assets/aoba.model.json"},"log":false});</script></body>
+
+</html>

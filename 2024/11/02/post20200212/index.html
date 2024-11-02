@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>关于计算机管理下的service无法启动解决方案 | Hexo</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">Hexo</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>关于计算机管理下的service无法启动解决方案</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2024-11-02</span><br />
+		
+			<span class="article__category">
+				<a class="article-category-link" href="/categories/%E7%BB%8F%E9%AA%8C/">经验</a>
+			</span><br />
+		
+		
+			<span class="article__tags">
+			  	<a class="article__tag-none-link" href="/tags/%E4%BB%A5%E9%98%B2%E4%B8%87%E4%B8%80/" rel="tag">以防万一</a>
+			</span>
+		
+	</div>
+
+	
+
+	
+		<p>1.按Windows + R 弹出运行框，输入regedit 进入注册表<br>2.在左侧找到一下路径，或者复制路径到注册表上方的路径位置，按回车<br>中文版Windows :计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services英文版Windows:Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services<br>3.找到对应服务的名称，进入<br>4.在右侧找到名为start 的，类型为REG_Dword 项目，双击修改数值，按照你个人的意愿，2为自动，3为手动，4为禁用。<br>5.重启电脑。解决问题</p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2024/11/02/post20200212/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2024 John Doe | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+<script src="/live2d/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"display":{"position":"left"},"mobile":{"show":false},"model":{"scale":1.2,"jsonPath":"/live2d/assets/aoba.model.json"},"log":false});</script></body>
+
+</html>
